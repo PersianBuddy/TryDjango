@@ -11,7 +11,15 @@
     <h3>List of students in {{school}} University</h3>
     <ul>
         {% for item in student_list %}
-        <li>{{ forloop.counter }} - {{ item }} </li>
+        <li>
+            {{ forloop.counter }} - {{ item }}
+            <!-- if condition Template Tag -->
+            {% if item == "Shahin" or not item == "Sara" %}
+                **
+            {% elif  item == "Sara" %}
+                *
+            {% endif %}
+        </li>
         {% endfor %}
     </ul>
 
