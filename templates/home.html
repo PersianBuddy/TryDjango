@@ -7,4 +7,12 @@
 {% block content %}
     <h1>Home</h1>
     <p>This is my first template</p>
+    <!-- For loop to goes through context items -->
+    <h3>List of students in {{school}} University</h3>
+    <ul>
+        {% for item in student_list %}
+        <li>{{ forloop.counter }} - {{ item }} </li>
+        {% endfor %}
+    </ul>
+
 {% endblock content %}
