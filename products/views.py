@@ -6,4 +6,4 @@ def product_detail_view(request, *args, **kwargs):
     context ={
         "product_object" : product_object,
     }
-    return render(request,'product/detail.html',context)
+    return render(request,'products/product_detail.html',context)
