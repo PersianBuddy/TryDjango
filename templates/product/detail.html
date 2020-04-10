@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{product_object.title|title }}</h1>
+    <p>
+        {% if product_object.description == '' %}
+            No description found
+        {% else %} {{product_object.description}}
+        {% endif %}
+    </p>
+{% endblock content %}
