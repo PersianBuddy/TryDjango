@@ -15,9 +15,9 @@ def create_product_view(request, *args, **kwargs):
         product_create_form = ProductCreateForm(request.POST)
         if product_create_form.is_valid():
            product_create_form.save()
+           product_create_form = ProductCreateForm()
         else:
             print(product_create_form.errors)#print errors in console
-        product_create_form= ProductCreateForm()
     context = {
         'form' : product_create_form,
     }

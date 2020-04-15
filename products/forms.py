@@ -20,3 +20,9 @@ class ProductCreateForm(forms.ModelForm):
             'summary'
         ]
 
+    def clean_price(self):
+        price = self.cleaned_data.get('price')
+        if price == 0:
+            raise forms.ValidationError("Price must be greater than zero")
+        else:
+            return price
