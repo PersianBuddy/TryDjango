@@ -17,6 +17,7 @@ def create_product_view(request, *args, **kwargs):
             Product.objects.create(**product_create_form.cleaned_data)
         else:
             print(product_create_form.errors)#print errors in console
+        product_create_form= ProductCreateForm()
     context = {
         'form' : product_create_form,
     }
