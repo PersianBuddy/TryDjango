@@ -2,8 +2,8 @@ from django.shortcuts import render
 from products.models import Product
 from products.forms import ProductCreateForm
 # Create your views here.
-def product_detail_view(request, *args, **kwargs):
-    product_object = Product.objects.get(id = 2)
+def product_detail_view(request,my_id, *args, **kwargs):
+    product_object = Product.objects.get(id = my_id)
     context ={
         "product_object" : product_object,
     }

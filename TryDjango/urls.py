@@ -19,7 +19,7 @@ from pages.views import home_view
 from products.views import product_detail_view, create_product_view
 
 urlpatterns = [
-    path('product/', product_detail_view),
+    path('products/<int:my_id>/', product_detail_view, name='product'),
     path('product/create/',create_product_view),
     path('', home_view),
     path('admin/', admin.site.urls),
