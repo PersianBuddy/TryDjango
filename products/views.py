@@ -1,9 +1,13 @@
+from django.http import Http404
 from django.shortcuts import render
 from products.models import Product
 from products.forms import ProductCreateForm
 # Create your views here.
 def product_detail_view(request,my_id, *args, **kwargs):
-    product_object = Product.objects.get(id = my_id)
+    try:
+        product_object = Product.objects.get(id = my_id)
+    except Product.DoesNotExist:
+        raise Http404
     context ={
         "product_object" : product_object,
     }
