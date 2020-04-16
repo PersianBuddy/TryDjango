@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Delete Product
+{% endblock title %}
+
+{% block content %}
+    <h1>{{product_object.title|title }}</h1>
+    <p>
+        {% if product_object.description == '' %}
+            No description found
+        {% else %} {{product_object.description}}
+        {% endif %}
+    </p>
+    <p>
+        {{ product_object.price }}
+    </p>
+    <form method="POST"> {% csrf_token %}
+        <input type="submit" name="delete" value="Delete"/>
+    </form>
+{% endblock content %}
