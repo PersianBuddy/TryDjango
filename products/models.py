@@ -9,4 +9,4 @@ class Product(models.Model):
     summary = models.TextField(blank=False, default="Default Summary") # it's required
 
     def get_absolute_url(self):
-        return reverse('product_detail',kwargs={'product_id':self.id })
+        return reverse('products:product_detail',kwargs={'product_id':self.id })
