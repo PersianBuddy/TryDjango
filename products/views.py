@@ -11,9 +11,9 @@ def products_list_view(request, *args, **kwargs):
     }
     return render(request, 'products/products_list.html',context)
 
-def product_detail_view(request,my_id, *args, **kwargs):
+def product_detail_view(request, product_id, *args, **kwargs):
     try:
-        product_object = Product.objects.get(id = my_id)
+        product_object = Product.objects.get(id = product_id)
     except Product.DoesNotExist:
         raise Http404
     context ={

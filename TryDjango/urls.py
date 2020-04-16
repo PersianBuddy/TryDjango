@@ -20,7 +20,7 @@ from products.views import product_detail_view, create_product_view, delete_prod
 
 urlpatterns = [
     path('products/', products_list_view, name = 'products_list'),
-    path('products/<int:my_id>/', product_detail_view, name='product'),
+    path('products/<int:product_id>/', product_detail_view, name='product_detail'),
     path('products/create/',create_product_view),
     path('products/<int:product_id>/delete/', delete_product_view, name= 'delete_product'),
     path('', home_view),
