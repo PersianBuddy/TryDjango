@@ -3,9 +3,12 @@
 {% block content %}
     <h1>{{product_object.title|title }}</h1>
     <p>
+        Description:
         {% if product_object.description == '' %}
             No description found
         {% else %} {{product_object.description}}
         {% endif %}
     </p>
+    <p>Price: {{product_object.price }}</p>
+    <a href="/products/">Back to products List</a>
 {% endblock content %}

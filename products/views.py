@@ -3,6 +3,14 @@ from django.shortcuts import render , get_object_or_404 , redirect
 from products.models import Product
 from products.forms import ProductCreateForm
 # Create your views here.
+
+def products_list_view(request, *args, **kwargs):
+    querrylist = Product.objects.all()
+    context = {
+        'products_list' : querrylist,
+    }
+    return render(request, 'products/products_list.html',context)
+
 def product_detail_view(request,my_id, *args, **kwargs):
     try:
         product_object = Product.objects.get(id = my_id)
