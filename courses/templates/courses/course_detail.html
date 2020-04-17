@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{course_object.title|title }}</h1>
+    <p>
+        Description:
+        {% if course_object.description == '' %}
+            No description found
+        {% else %} {{course_object.description}}
+        {% endif %}
+    </p>
+    <p>Paticipants: {{course_object.participants }}</p>
+    <button><a href="delete/">Delete</a></button>
+    <br>
+    <br>
+    <a href="update">Edit this course</a>
+    <a href="/courses/">Back to courses List</a>
+{% endblock content %}
